@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-const image = require('assets/its_something.png');
+import { Component, OnInit, Input } from '@angular/core'
+import { Observable } from 'rxjs/Observable'
+const image = require('assets/its_something.png')
 
 @Component({
   selector: 'app-calc',
@@ -20,21 +20,21 @@ const image = require('assets/its_something.png');
   styleUrls: ['./calc.component.css']
 })
 export class CalcComponent implements OnInit {
-  @Input() hasAClass = false;
-  prop1: number;
-  image: string;
-  observable$: Observable<string>;
+  @Input() hasAClass = false
+  prop1: number
+  image: string
+  observable$: Observable<string>
 
   constructor() {
-    this.init();
-    this.prop1 = 1337;
-    this.image = image;
+    this.init()
+    this.prop1 = 1337
+    this.image = image
   }
 
   ngOnInit() {
   }
 
   init() {
-    return 'Imma method';
+    return 'Imma method'
   }
 }

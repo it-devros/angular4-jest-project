@@ -1,5 +1,5 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
-import {trigger, transition, style, animate} from '@angular/animations';
+import {Component, HostBinding, OnInit} from '@angular/core'
+import {trigger, transition, style, animate} from '@angular/animations'
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,9 @@ import {trigger, transition, style, animate} from '@angular/animations';
 })
 export class AppComponent implements OnInit{
   @HostBinding('@routerTransition')
-  title = 'app works!';
-  hasClass = true;
-  variableWithPrecedingDolar = 1234;
+  title = 'app works!'
+  hasClass = true
+  variableWithPrecedingDolar = 1234
 
   ngOnInit() {}
 }

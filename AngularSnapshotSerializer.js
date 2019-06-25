@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const printAttributes = (val, attributes, print, indent, colors, opts) => {
   return attributes
@@ -15,22 +15,22 @@ const printAttributes = (val, attributes, print, indent, colors, opts) => {
               ']}'
           : `"${val.componentInstance[attribute]}"`) +
         colors.value.close
-      );
+      )
     })
-    .join('');
-};
+    .join('')
+}
 
 const print = (val, print, indent, opts, colors) => {
-  let result = '';
-  let componentAttrs = '';
+  let result = ''
+  let componentAttrs = ''
 
-  const componentName = val.componentRef._elDef.element.name;
+  const componentName = val.componentRef._elDef.element.name
   const nodes = (val.componentRef._view.nodes || [])
     .filter(node => node && node.hasOwnProperty('renderElement'))
     .map(node => Array.from(node.renderElement.childNodes).map(print).join(''))
-    .join(opts.edgeSpacing);
+    .join(opts.edgeSpacing)
 
-  const attributes = Object.keys(val.componentInstance);
+  const attributes = Object.keys(val.componentInstance)
 
   if (attributes.length) {
     componentAttrs += printAttributes(
@@ -40,7 +40,7 @@ const print = (val, print, indent, opts, colors) => {
       indent,
       colors,
       opts
-    );
+    )
   }
 
   return (
@@ -53,16 +53,16 @@ const print = (val, print, indent, opts, colors) => {
     '\n</' +
     componentName +
     '>'
-  );
-};
+  )
+}
 
 const test = val =>
   val !== undefined &&
   val !== null &&
   typeof val === 'object' &&
-  Object.prototype.hasOwnProperty.call(val, 'componentRef');
+  Object.prototype.hasOwnProperty.call(val, 'componentRef')
 
 module.exports = {
   print: print,
   test: test
-};
+}

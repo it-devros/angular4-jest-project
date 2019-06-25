@@ -7,19 +7,19 @@
  *
  */
 
-'use strict';
+'use strict'
 
-const HTML_ELEMENT_REGEXP = /Comment/;
+const HTML_ELEMENT_REGEXP = /Comment/
 const test = value =>
   value !== undefined &&
   value !== null &&
   value.nodeType === 8 &&
   value.constructor !== undefined &&
-  HTML_ELEMENT_REGEXP.test(value.constructor.name);
+  HTML_ELEMENT_REGEXP.test(value.constructor.name)
 
-const print = () => '';
+const print = () => ''
 
 module.exports = {
   print: print,
   test: test
-};
+}
